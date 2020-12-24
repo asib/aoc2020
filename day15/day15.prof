@@ -1,0 +1,44 @@
+	Thu Dec 24 14:48 2020 Time and Allocation Profiling Report  (Final)
+
+	   day15 +RTS -p -RTS
+
+	total time  =       36.07 secs   (36066 ticks @ 1000 us, 1 processor)
+	total alloc = 32,797,622,456 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE SRC                         %time %alloc
+
+step'       Main   src/Main.hs:(15,1)-(16,93)   86.7   89.6
+step        Main   src/Main.hs:24:1-63          11.6    9.0
+untilTurn.f Main   src/Main.hs:(34,5)-(36,32)    1.7    1.5
+
+
+                                                                                        individual      inherited
+COST CENTRE         MODULE                SRC                        no.     entries  %time %alloc   %time %alloc
+
+MAIN                MAIN                  <built-in>                 153          0    0.0    0.0   100.0  100.0
+ CAF                GHC.Conc.Signal       <entire-module>            252          0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Encoding       <entire-module>            233          0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Encoding.Iconv <entire-module>            231          0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Handle.FD      <entire-module>            222          0    0.0    0.0     0.0    0.0
+ CAF                GHC.IO.Handle.Text    <entire-module>            220          0    0.0    0.0     0.0    0.0
+ CAF:input          Main                  src/Main.hs:12:1-5         296          0    0.0    0.0     0.0    0.0
+  input             Main                  src/Main.hs:12:1-24        313          1    0.0    0.0     0.0    0.0
+ CAF:main           Main                  src/Main.hs:42:1-4         305          0    0.0    0.0     0.0    0.0
+  main              Main                  src/Main.hs:(42,1)-(43,58) 306          1    0.0    0.0     0.0    0.0
+ CAF:main1          Main                  <no location info>         304          0    0.0    0.0     0.0    0.0
+  main              Main                  src/Main.hs:(42,1)-(43,58) 308          0    0.0    0.0     0.0    0.0
+   lastUttered      Main                  src/Main.hs:39:1-29        309          1    0.0    0.0     0.0    0.0
+ CAF:main2          Main                  <no location info>         303          0    0.0    0.0   100.0  100.0
+  main              Main                  src/Main.hs:(42,1)-(43,58) 310          0    0.0    0.0   100.0  100.0
+   untilTurn        Main                  src/Main.hs:(30,1)-(36,32) 311          1    0.0    0.0   100.0  100.0
+    untilTurn.f     Main                  src/Main.hs:(34,5)-(36,32) 317   29999994    1.7    1.5   100.0  100.0
+     step           Main                  src/Main.hs:24:1-63        318   29999994   11.6    9.0    98.3   98.5
+      step'         Main                  src/Main.hs:(15,1)-(16,93) 319   29999994   86.7   89.6    86.7   89.6
+       step''       Main                  src/Main.hs:(19,1)-(21,43) 320   29999993    0.0    0.0     0.0    0.0
+    untilTurn.state Main                  src/Main.hs:32:5-54        312          1    0.0    0.0     0.0    0.0
+     setup          Main                  src/Main.hs:27:1-47        315          0    0.0    0.0     0.0    0.0
+ CAF:setup          Main                  src/Main.hs:27:1-5         302          0    0.0    0.0     0.0    0.0
+  setup             Main                  src/Main.hs:27:1-47        314          1    0.0    0.0     0.0    0.0
+ CAF:setup_x        Main                  <no location info>         294          0    0.0    0.0     0.0    0.0
+  setup             Main                  src/Main.hs:27:1-47        316          0    0.0    0.0     0.0    0.0
+ main               Main                  src/Main.hs:(42,1)-(43,58) 307          0    0.0    0.0     0.0    0.0
